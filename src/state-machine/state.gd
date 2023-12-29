@@ -6,6 +6,7 @@ extends Node
 ## More info in README
 
 var character: CharacterBody2D
+var movement_comp: Node
 
 # TODO: Animation functionality
 # TODO: Movement Component

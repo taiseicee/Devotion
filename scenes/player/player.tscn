@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://gk13n5w5sdjo"]
+[gd_scene load_steps=9 format=3 uid="uid://gk13n5w5sdjo"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_2nw71"]
 [ext_resource type="Texture2D" uid="uid://b4bk082itopvy" path="res://icon.svg" id="1_m5cen"]
 [ext_resource type="Script" path="res://src/player/state_machine.gd" id="2_k38tq"]
 [ext_resource type="Script" path="res://src/player/idle.gd" id="2_q1bb2"]
 [ext_resource type="Script" path="res://src/player/move.gd" id="5_hlgto"]
+[ext_resource type="Script" path="res://src/player/fall.gd" id="6_372ll"]
+[ext_resource type="Script" path="res://src/movement_component.gd" id="6_we8gr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ti1n"]
 
@@ -18,14 +20,24 @@ texture = ExtResource("1_m5cen")
 [node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1ti1n")
 
-[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("start_state")]
 script = ExtResource("2_k38tq")
-starting_state = NodePath("idle")
+start_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("state_move")]
-script = ExtResource("2_q1bb2")
+[node name="fall" type="Node" parent="state_machine" node_paths=PackedStringArray("state_idle", "state_move")]
+script = ExtResource("6_372ll")
+state_idle = NodePath("../idle")
 state_move = NodePath("../move")
 
-[node name="move" type="Node" parent="state_machine" node_paths=PackedStringArray("state_idle")]
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_move")]
+script = ExtResource("2_q1bb2")
+state_fall = NodePath("../fall")
+state_move = NodePath("../move")
+
+[node name="move" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_idle")]
 script = ExtResource("5_hlgto")
+state_fall = NodePath("../fall")
 state_idle = NodePath("../idle")
+
+[node name="movement_component" type="Node" parent="."]
+script = ExtResource("6_we8gr")

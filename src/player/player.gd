@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 @onready
 var state_machine: Node = $state_machine
+@onready
+var movement_comp: Node = $movement_component
 
 func _ready() -> void:
-	state_machine.init(self)
+	movement_comp.init(self)
+	state_machine.init(self, movement_comp)
 
 func _process(delta) -> void:
 	state_machine.process_frame(delta)

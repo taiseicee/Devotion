@@ -5,15 +5,16 @@ extends Node
 ## More info in README
 
 @export
-var starting_state: State
+var start_state: State
 
 var current_state: State
 
-func init(character: CharacterBody2D) -> void:
+func init(character: CharacterBody2D, movement_comp: Node) -> void:
 	for state in get_children():
 		state.character = character
+		state.movement_comp = movement_comp
 	
-	change_state(starting_state)
+	change_state(start_state)
 
 func change_state(new_state: State) -> void:
 	if current_state:
