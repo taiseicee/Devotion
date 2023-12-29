@@ -6,7 +6,6 @@ var state_machine: Node = $state_machine
 var movement_comp: Node = $movement_component
 
 func _ready() -> void:
-	movement_comp.init(self)
 	state_machine.init(self, movement_comp)
 
 func _process(delta) -> void:

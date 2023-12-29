@@ -4,15 +4,24 @@ extends State
 var state_fall: State
 @export
 var state_idle: State
+@export
+var state_jump: State
+
+func process_input(event: InputEvent) -> State:
+	if Input.is_action_just_pressed("jump") and character.is_on_floor():
+		return state_jump
+	return null
 
 func process_physics(delta: float) -> State:
 	movement_comp.handle_gravity(delta)
-	var direction: float = Input.get_axis("move_left", "move_right")
+	movement_comp.handle_move(
+		Input.is_action_pressed("move_left"), 
+		Input.is_action_pressed("move_right")
+	)
 	
-	if direction == 0:
+	if movement_comp.direction == 0:
 		return state_idle
 	
-	movement_comp.handle_move(direction)
 	character.move_and_slide()
 	
 	if not character.is_on_floor():

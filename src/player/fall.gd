@@ -6,9 +6,18 @@ var state_idle: State
 var state_move: State
 
 func process_physics(delta: float) -> State:
-	movement_comp.handle_gravity(delta)
+	movement_comp.handle_fall(
+		Input.is_action_pressed("move_left"), 
+		Input.is_action_pressed("move_right"),
+		delta
+	)
+	
 	character.move_and_slide()
 	
-	if character.is_on_floor():
+	if not character.is_on_floor():
+		return null
+	
+	if movement_comp.direction == 0:
 		return state_idle
-	return null
+	
+	return state_move

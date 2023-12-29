@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gk13n5w5sdjo"]
+[gd_scene load_steps=10 format=3 uid="uid://gk13n5w5sdjo"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_2nw71"]
 [ext_resource type="Texture2D" uid="uid://b4bk082itopvy" path="res://icon.svg" id="1_m5cen"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/player/move.gd" id="5_hlgto"]
 [ext_resource type="Script" path="res://src/player/fall.gd" id="6_372ll"]
 [ext_resource type="Script" path="res://src/movement_component.gd" id="6_we8gr"]
+[ext_resource type="Script" path="res://src/player/jump.gd" id="7_uw65o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ti1n"]
 
@@ -29,15 +30,23 @@ script = ExtResource("6_372ll")
 state_idle = NodePath("../idle")
 state_move = NodePath("../move")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_move")]
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_jump", "state_move")]
 script = ExtResource("2_q1bb2")
 state_fall = NodePath("../fall")
+state_jump = NodePath("../jump")
 state_move = NodePath("../move")
 
-[node name="move" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_idle")]
+[node name="jump" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_idle", "state_move")]
+script = ExtResource("7_uw65o")
+state_fall = NodePath("../fall")
+state_idle = NodePath("../idle")
+state_move = NodePath("../move")
+
+[node name="move" type="Node" parent="state_machine" node_paths=PackedStringArray("state_fall", "state_idle", "state_jump")]
 script = ExtResource("5_hlgto")
 state_fall = NodePath("../fall")
 state_idle = NodePath("../idle")
+state_jump = NodePath("../jump")
 
 [node name="movement_component" type="Node" parent="."]
 script = ExtResource("6_we8gr")
