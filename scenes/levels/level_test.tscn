@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4g4tpj67q71j"]
+
+[ext_resource type="Texture2D" uid="uid://rn25o6845hnf" path="res://assets/graphics/levels/test-level-tile-map.png" id="1_o0xl5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m74y"]
+texture = ExtResource("1_o0xl5")
+texture_region_size = Vector2i(100, 100)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+
+[sub_resource type="TileSet" id="TileSet_xkiul"]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_8m74y")
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_xkiul")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(262146, 65538, 1, 262147, 65538, 1, 262148, 65538, 1, 262150, 65538, 1, 262151, 65538, 1, 262152, 65538, 1, 327679, 65538, 1, 327678, 65538, 1, 327677, 65538, 1, 262155, 65538, 1, 262156, 65538, 1, 262157, 65538, 1, 262160, 65538, 1, 262161, 65538, 1, 262162, 65538, 1, 262163, 65538, 1, 262164, 65538, 1, 262165, 65538, 1, 262166, 65538, 1, 262167, 65538, 1, 262168, 65538, 1, 262169, 65538, 1, 262170, 65538, 1, 262171, 65538, 1, 262172, 65538, 1, 262173, 65538, 1, 262174, 65538, 1, 262175, 65538, 1, 262176, 65538, 1, 262177, 65538, 1, 262178, 65538, 1, 262179, 65538, 1, 262180, 65538, 1, 262181, 65538, 1, 262182, 65538, 1, 262183, 65538, 1, 262184, 65538, 1)
