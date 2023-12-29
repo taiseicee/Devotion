@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://gk13n5w5sdjo"]
+
+[ext_resource type="Texture2D" uid="uid://b4bk082itopvy" path="res://icon.svg" id="1_m5cen"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ti1n"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Graphic" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_m5cen")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1ti1n")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Jump" type="Node" parent="StateMachine"]
+
+[node name="Fall" type="Node" parent="StateMachine"]
+
+[node name="Move" type="Node" parent="StateMachine"]
