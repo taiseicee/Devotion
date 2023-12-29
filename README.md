@@ -10,3 +10,4 @@ The Game Design Document
 ## Sources
 Godot-Based State Machine
 - https://youtu.be/oqFbZoA2lnU?si=MLi0-O7PYnSy9EEP
+- https://youtu.be/bNdFXooM1MQ?si=ZN7HzMl2L3Wvn2dJ
