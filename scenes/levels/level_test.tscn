@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4g4tpj67q71j"]
+[gd_scene load_steps=6 format=3 uid="uid://d4g4tpj67q71j"]
 
 [ext_resource type="Texture2D" uid="uid://rn25o6845hnf" path="res://assets/graphics/test/test_level_tile_map.png" id="1_o0xl5"]
+[ext_resource type="PackedScene" uid="uid://bo486w7wuh1sr" path="res://scenes/levels/spike_platform.tscn" id="2_bqwke"]
 [ext_resource type="PackedScene" uid="uid://gk13n5w5sdjo" path="res://scenes/player/player.tscn" id="2_q26kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m74y"]
@@ -23,6 +24,9 @@ tile_set = SubResource("TileSet_xkiul")
 format = 2
 layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(262146, 65538, 1, 262147, 65538, 1, 262148, 65538, 1, 262150, 65538, 1, 262151, 65538, 1, 262152, 65538, 1, 327679, 65538, 1, 327678, 65538, 1, 327677, 65538, 1, 262155, 65538, 1, 262156, 65538, 1, 262157, 65538, 1, 262160, 65538, 1, 262161, 65538, 1, 262162, 65538, 1, 262163, 65538, 1, 262164, 65538, 1, 262165, 65538, 1, 262166, 65538, 1, 262167, 65538, 1, 262168, 65538, 1, 262169, 65538, 1, 262170, 65538, 1, 262171, 65538, 1, 262172, 65538, 1, 262173, 65538, 1, 262174, 65538, 1, 262175, 65538, 1, 262176, 65538, 1, 262177, 65538, 1, 262178, 65538, 1, 262179, 65538, 1, 262180, 65538, 1, 262181, 65538, 1, 262182, 65538, 1, 262183, 65538, 1, 262184, 65538, 1)
+
+[node name="spike_platform" parent="." instance=ExtResource("2_bqwke")]
+position = Vector2(2420, 135)
 
 [node name="player" parent="." instance=ExtResource("2_q26kf")]
 position = Vector2(698, 257)

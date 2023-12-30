@@ -1,9 +1,9 @@
 extends Node
 
 @export
-var speed: float = 400
+var speed: float = 500
 @export
-var speed_jump: float = 600
+var speed_jump: float = 800
 @export
 var speed_air_multiplier: float = 0.8
 

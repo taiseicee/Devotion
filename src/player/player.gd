@@ -16,3 +16,6 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	state_machine.process_physics(delta)
+
+func hit_by_object(body: Node2D):
+	print(body)
