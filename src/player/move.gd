@@ -7,6 +7,10 @@ var state_idle: State
 @export
 var state_jump: State
 
+func enter_state() -> void:
+	super()
+	character.floor_snap_length = 10
+
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed("jump") and character.is_on_floor():
 		return state_jump
