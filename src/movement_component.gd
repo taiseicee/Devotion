@@ -1,7 +1,7 @@
 extends Node
 
 @export
-var speed: float = 300
+var speed: float = 400
 @export
 var speed_jump: float = 600
 @export
