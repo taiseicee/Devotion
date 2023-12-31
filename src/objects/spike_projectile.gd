@@ -13,3 +13,6 @@ func _ready():
 func _process(delta):
 	constant_linear_velocity = direction * speed
 	position += constant_linear_velocity * delta
+
+func _on_area_2d_body_entered(body):
+	body.hit_by_object(self)
