@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4g4tpj67q71j"]
+[gd_scene load_steps=7 format=3 uid="uid://d4g4tpj67q71j"]
 
 [ext_resource type="Texture2D" uid="uid://cdwp1friot5rh" path="res://assets/graphics/test/test_platforms.png" id="1_fnagx"]
 [ext_resource type="PackedScene" uid="uid://bo486w7wuh1sr" path="res://scenes/objects/spike_platform.tscn" id="2_bqwke"]
 [ext_resource type="PackedScene" uid="uid://gk13n5w5sdjo" path="res://scenes/player/player.tscn" id="2_q26kf"]
+[ext_resource type="PackedScene" uid="uid://nytujdt4awcl" path="res://scenes/objects/spike_projectile.tscn" id="3_xcnld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osvy2"]
 texture = ExtResource("1_fnagx")
@@ -62,5 +63,10 @@ position = Vector2(408, -152)
 should_move = true
 point_end = Vector2(2530, -450)
 
+[node name="spike_projectile" parent="." instance=ExtResource("3_xcnld")]
+position = Vector2(-1544, -527)
+direction = Vector2(1, 0)
+
 [node name="player" parent="." instance=ExtResource("2_q26kf")]
 position = Vector2(-9, -187)
+metadata/_edit_lock_ = true
