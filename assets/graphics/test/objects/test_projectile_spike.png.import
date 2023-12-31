@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0iqht3kcxip1"
-path="res://.godot/imported/test_platform_spikes.png-0ee3bb121f7ac3d1be3d8a2d55ab6cb7.ctex"
+uid="uid://pd8g1ybqaal0"
+path="res://.godot/imported/test_projectile_spike.png-553ff0a910e15c74dfb4f1126813cc13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/test/test_platform_spikes.png"
-dest_files=["res://.godot/imported/test_platform_spikes.png-0ee3bb121f7ac3d1be3d8a2d55ab6cb7.ctex"]
+source_file="res://assets/graphics/test/objects/test_projectile_spike.png"
+dest_files=["res://.godot/imported/test_projectile_spike.png-553ff0a910e15c74dfb4f1126813cc13.ctex"]
 
 [params]
 

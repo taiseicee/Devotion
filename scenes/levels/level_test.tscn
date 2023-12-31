@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d4g4tpj67q71j"]
 
 [ext_resource type="Texture2D" uid="uid://cdwp1friot5rh" path="res://assets/graphics/test/test_platforms.png" id="1_fnagx"]
-[ext_resource type="PackedScene" uid="uid://bo486w7wuh1sr" path="res://scenes/levels/spike_platform.tscn" id="2_bqwke"]
+[ext_resource type="PackedScene" uid="uid://bo486w7wuh1sr" path="res://scenes/objects/spike_platform.tscn" id="2_bqwke"]
 [ext_resource type="PackedScene" uid="uid://gk13n5w5sdjo" path="res://scenes/player/player.tscn" id="2_q26kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osvy2"]
@@ -58,7 +58,9 @@ layer_2/name = "fore_ground"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="spike_platform" parent="." instance=ExtResource("2_bqwke")]
-position = Vector2(2068, -258)
+position = Vector2(368, -348)
+should_move = true
+point_end = Vector2(2530, -360)
 
 [node name="player" parent="." instance=ExtResource("2_q26kf")]
 position = Vector2(-9, -187)
