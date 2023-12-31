@@ -58,9 +58,9 @@ layer_2/name = "fore_ground"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="spike_platform" parent="." instance=ExtResource("2_bqwke")]
-position = Vector2(368, -348)
+position = Vector2(408, -152)
 should_move = true
-point_end = Vector2(2530, -360)
+point_end = Vector2(2530, -450)
 
 [node name="player" parent="." instance=ExtResource("2_q26kf")]
 position = Vector2(-9, -187)

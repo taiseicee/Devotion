@@ -13,6 +13,7 @@ var direction: Vector2
 func _ready() -> void:
 	point_start = position
 	direction = (point_end - point_start).normalized()
+	constant_linear_velocity = direction * speed
 
 func _process(delta) -> void:
 	if not should_move or point_start == point_end:
@@ -25,6 +26,7 @@ func _process(delta) -> void:
 	point_start = point_end
 	point_end = new_point_end
 	direction = (point_end - point_start).normalized()
+	constant_linear_velocity = direction * speed
 
 func _on_area_2d_body_entered(body):
 	body.hit_by_object(self)
